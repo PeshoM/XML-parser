@@ -1,15 +1,23 @@
 package cli;
 
+import cli.commands.CloseCommand;
 import cli.commands.ExitCommand;
 import cli.commands.HelpCommand;
+import cli.commands.OpenCommand;
+import io.FileService;
 
 import java.util.Scanner;
 
 public class CommandLineInterface {
     private final CommandRegistry registry = new CommandRegistry();
+    private final Session session = new Session();
+    private final ArgumentTokenizer argTokenizer = new ArgumentTokenizer();
     private boolean running = true;
 
     public CommandLineInterface() {
+        FileService fs = new FileService();
+        registry.register(new OpenCommand(fs));
+        registry.register(new CloseCommand());
         registry.register(new HelpCommand(registry));
         registry.register(new ExitCommand(() -> running = false));
     }
@@ -20,17 +28,14 @@ public class CommandLineInterface {
             System.out.print("> ");
             String line = scanner.nextLine().trim();
             if (line.isEmpty()) continue;
-            String[] tokens = line.split("\\s+");
+            String[] tokens = argTokenizer.tokenize(line);
             Command c = registry.lookup(tokens);
-            if (c == null) {
-                System.out.println("Unknown command. Type 'help' for the list.");
-                continue;
-            }
+            if (c == null) { System.out.println("Unknown command. Type 'help' for the list."); continue; }
             int consumed = registry.leadingTokensConsumed(tokens);
             String[] rest = new String[tokens.length - consumed];
             System.arraycopy(tokens, consumed, rest, 0, rest.length);
             try {
-                c.execute(rest, System.out);
+                c.execute(rest, session, System.out);
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
             }

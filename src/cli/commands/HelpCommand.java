@@ -2,6 +2,7 @@ package cli.commands;
 
 import cli.Command;
 import cli.CommandRegistry;
+import cli.Session;
 
 import java.io.PrintStream;
 
@@ -16,7 +17,7 @@ public class HelpCommand implements Command {
     @Override public String helpLine() { return "help             prints this information"; }
 
     @Override
-    public void execute(String[] args, PrintStream out) {
+    public void execute(String[] args, Session session, PrintStream out) {
         out.println("The following commands are supported:");
         for (Command c : registry.all()) {
             out.println(c.helpLine());
