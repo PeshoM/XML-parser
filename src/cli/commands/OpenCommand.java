@@ -25,16 +25,15 @@ public class OpenCommand implements Command {
         if (args.length < 1) { out.println(helpLine()); return; }
         Path p = Path.of(args[0]);
         try {
-            XmlDocument doc;
+            XmlElement root;
             if (!fs.exists(p)) {
-                XmlElement root = new XmlElement("root");
-                doc = new XmlDocument(root);
+                root = new XmlElement("root");
             } else {
-                String content = fs.readAll(p);
-                var tokens = new Tokenizer(content).tokenize();
-                XmlElement root = new Parser(tokens).parseDocument();
-                doc = new XmlDocument(root);
+                var tokens = new Tokenizer(fs.readAll(p)).tokenize();
+                root = new Parser(tokens).parseDocument();
             }
+            XmlDocument doc = new XmlDocument(root);
+            new id.UniqueIdAssigner().assign(doc);
             session.open(p, doc);
             out.println("Successfully opened " + p.getFileName());
         } catch (IOException e) {
