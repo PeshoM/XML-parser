@@ -5,6 +5,8 @@ import cli.commands.ExitCommand;
 import cli.commands.HelpCommand;
 import cli.commands.OpenCommand;
 import cli.commands.PrintCommand;
+import cli.commands.SaveCommand;
+import cli.commands.SaveAsCommand;
 import io.FileService;
 
 import java.util.Scanner;
@@ -19,6 +21,8 @@ public class CommandLineInterface {
         FileService fs = new FileService();
         registry.register(new OpenCommand(fs));
         registry.register(new CloseCommand());
+        registry.register(new SaveCommand(fs));
+        registry.register(new SaveAsCommand(fs));
         registry.register(new PrintCommand());
         registry.register(new HelpCommand(registry));
         registry.register(new ExitCommand(() -> running = false));
