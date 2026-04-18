@@ -1,12 +1,15 @@
 package cli;
 
 import cli.commands.CloseCommand;
+import cli.commands.DeleteCommand;
 import cli.commands.ExitCommand;
 import cli.commands.HelpCommand;
 import cli.commands.OpenCommand;
 import cli.commands.PrintCommand;
 import cli.commands.SaveCommand;
 import cli.commands.SaveAsCommand;
+import cli.commands.SelectCommand;
+import cli.commands.SetCommand;
 import io.FileService;
 
 import java.util.Scanner;
@@ -24,6 +27,9 @@ public class CommandLineInterface {
         registry.register(new SaveCommand(fs));
         registry.register(new SaveAsCommand(fs));
         registry.register(new PrintCommand());
+        registry.register(new SelectCommand());
+        registry.register(new SetCommand());
+        registry.register(new DeleteCommand());
         registry.register(new HelpCommand(registry));
         registry.register(new ExitCommand(() -> running = false));
     }
