@@ -1,5 +1,7 @@
 package cli;
 
+import cli.commands.ChildCommand;
+import cli.commands.ChildrenCommand;
 import cli.commands.CloseCommand;
 import cli.commands.DeleteCommand;
 import cli.commands.ExitCommand;
@@ -10,6 +12,7 @@ import cli.commands.SaveCommand;
 import cli.commands.SaveAsCommand;
 import cli.commands.SelectCommand;
 import cli.commands.SetCommand;
+import cli.commands.TextCommand;
 import io.FileService;
 
 import java.util.Scanner;
@@ -30,6 +33,9 @@ public class CommandLineInterface {
         registry.register(new SelectCommand());
         registry.register(new SetCommand());
         registry.register(new DeleteCommand());
+        registry.register(new ChildrenCommand());
+        registry.register(new ChildCommand());
+        registry.register(new TextCommand());
         registry.register(new HelpCommand(registry));
         registry.register(new ExitCommand(() -> running = false));
     }
