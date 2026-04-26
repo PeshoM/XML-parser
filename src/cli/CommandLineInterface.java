@@ -12,6 +12,7 @@ import cli.commands.SaveCommand;
 import cli.commands.SaveAsCommand;
 import cli.commands.SelectCommand;
 import cli.commands.SetCommand;
+import cli.commands.NewChildCommand;
 import cli.commands.TextCommand;
 import io.FileService;
 
@@ -36,6 +37,7 @@ public class CommandLineInterface {
         registry.register(new ChildrenCommand());
         registry.register(new ChildCommand());
         registry.register(new TextCommand());
+        registry.register(new NewChildCommand());
         registry.register(new HelpCommand(registry));
         registry.register(new ExitCommand(() -> running = false));
     }
