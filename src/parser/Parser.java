@@ -66,8 +66,10 @@ public class Parser {
                 throw new ParseException("Unexpected token " + t.type + " '" + t.value + "'", t.line, t.column);
             }
         }
-        if (textBuf.length() > 0 && el.getChildren().isEmpty()) {
+        if (el.getChildren().isEmpty()) {
             el.setText(textBuf.toString());
+        } else {
+            el.setText("");
         }
 
         // closing tag
