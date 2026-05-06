@@ -1,0 +1,6 @@
+package xpath;
+
+public enum XPathTokenType {
+    SLASH, OPEN_BRACKET, CLOSE_BRACKET, OPEN_PAREN, CLOSE_PAREN,
+    AT, EQUALS, IDENTIFIER, NUMBER, STRING, AXIS_SEP, STAR, EOF
+}
