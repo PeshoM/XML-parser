@@ -77,7 +77,8 @@ public class XPathParser {
             XPathToken nameTok = expect(XPathTokenType.IDENTIFIER);
             if (peek().type == XPathTokenType.EQUALS) {
                 advance();
-                XPathToken val = expect(XPathTokenType.STRING);
+                XPathToken val = (peek().type == XPathTokenType.STRING || peek().type == XPathTokenType.IDENTIFIER)
+                    ? advance() : expect(XPathTokenType.STRING);
                 return new XPathPredicate.AttrEquals(nameTok.value, val.value);
             }
             return new XPathPredicate.AttrSelector(nameTok.value);
@@ -85,7 +86,8 @@ public class XPathParser {
         if (peek().type == XPathTokenType.IDENTIFIER) {
             XPathToken nameTok = advance();
             expect(XPathTokenType.EQUALS);
-            XPathToken val = expect(XPathTokenType.STRING);
+            XPathToken val = (peek().type == XPathTokenType.STRING || peek().type == XPathTokenType.IDENTIFIER)
+                ? advance() : expect(XPathTokenType.STRING);
             return new XPathPredicate.AttrEquals(nameTok.value, val.value);
         }
         throw new XPathException("Unexpected token in predicate: '" + peek().value + "'");

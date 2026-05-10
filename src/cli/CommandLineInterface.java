@@ -14,6 +14,7 @@ import cli.commands.SelectCommand;
 import cli.commands.SetCommand;
 import cli.commands.NewChildCommand;
 import cli.commands.TextCommand;
+import cli.commands.XPathCommand;
 import io.FileService;
 
 import java.util.Scanner;
@@ -38,6 +39,7 @@ public class CommandLineInterface {
         registry.register(new ChildCommand());
         registry.register(new TextCommand());
         registry.register(new NewChildCommand());
+        registry.register(new XPathCommand());
         registry.register(new HelpCommand(registry));
         registry.register(new ExitCommand(() -> running = false));
     }
