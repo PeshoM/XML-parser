@@ -40,7 +40,7 @@ public class Parser {
                 attrPrefix = attrName;
                 attrName = expect(TokenType.IDENTIFIER).value;
             }
-            String fullAttr = (attrPrefix == null) ? attrName : attrPrefix + ":" + attrName;
+            String fullAttr = qualified(attrPrefix, attrName);
             expect(TokenType.EQUALS);
             String value = expect(TokenType.STRING).value;
             el.getAttributes().put(fullAttr, value);
@@ -85,7 +85,7 @@ public class Parser {
             !java.util.Objects.equals(closePrefix, el.getNsPrefix())) {
             Token t = tokens.get(pos - 1);
             String expected = el.getQualifiedName();
-            String got = (closePrefix == null) ? closeName : closePrefix + ":" + closeName;
+            String got = qualified(closePrefix, closeName);
             throw new ParseException("Closing tag '" + got + "' does not match opening '" + expected + "'",
                 t.line, t.column);
         }
@@ -103,5 +103,9 @@ public class Parser {
                 tok.line, tok.column);
         }
         return advance();
+    }
+
+    private static String qualified(String prefix, String local) {
+        return (prefix == null) ? local : prefix + ":" + local;
     }
 }
