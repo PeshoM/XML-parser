@@ -36,10 +36,22 @@ public class PrettyPrinter {
     }
 
     private String escapeText(String s) {
-        return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
+        if (s == null || s.isEmpty()) return "";
+        StringBuilder sb = new StringBuilder(s.length());
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            switch (c) {
+                case '&' -> sb.append("&amp;");
+                case '<' -> sb.append("&lt;");
+                case '>' -> sb.append("&gt;");
+                default -> sb.append(c);
+            }
+        }
+        return sb.toString();
     }
 
     private String escapeAttr(String s) {
+        if (s == null) return "";
         return escapeText(s).replace("\"", "&quot;");
     }
 }
