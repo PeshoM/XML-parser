@@ -6,6 +6,7 @@ import cli.Session;
 
 import java.io.PrintStream;
 
+/** Командата help. */
 public class HelpCommand implements Command {
     private final CommandRegistry registry;
 

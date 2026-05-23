@@ -1,5 +1,6 @@
 package parser;
 
+/** Видове токени. */
 public enum TokenType {
     TAG_OPEN,        // <
     TAG_END_OPEN,    // </

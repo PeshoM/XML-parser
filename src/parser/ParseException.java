@@ -1,5 +1,6 @@
 package parser;
 
+/** Грешка при парсване на XML. */
 public class ParseException extends RuntimeException {
     public final int line;
     public final int column;

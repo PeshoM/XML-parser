@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Path;
 
+/** Командата save as. */
 public class SaveAsCommand implements Command {
     private final FileService fs;
     private final PrettyPrinter printer = new PrettyPrinter();

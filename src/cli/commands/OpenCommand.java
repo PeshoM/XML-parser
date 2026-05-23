@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Path;
 
+/** Командата open. */
 public class OpenCommand implements Command {
     private final FileService fs;
 

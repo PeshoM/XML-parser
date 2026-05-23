@@ -4,6 +4,7 @@ import model.XmlElement;
 
 import java.util.List;
 
+/** Парсър на XML (рекурсивно слизане). */
 public class Parser {
     private final List<Token> tokens;
     private int pos;
@@ -12,6 +13,7 @@ public class Parser {
         this.tokens = tokens;
     }
 
+    /** Парсва документа и връща кореновия елемент. */
     public XmlElement parseDocument() {
         XmlElement root = parseElement();
         expect(TokenType.EOF);

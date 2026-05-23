@@ -2,6 +2,7 @@ package cli;
 
 import java.io.PrintStream;
 
+/** Интерфейс за всички CLI команди. */
 public interface Command {
     String name();
     String helpLine();

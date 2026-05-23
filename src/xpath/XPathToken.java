@@ -1,5 +1,6 @@
 package xpath;
 
+/** XPath токен. */
 public class XPathToken {
     public final XPathTokenType type;
     public final String value;

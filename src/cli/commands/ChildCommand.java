@@ -7,6 +7,7 @@ import serializer.PrettyPrinter;
 
 import java.io.PrintStream;
 
+/** Командата child. */
 public class ChildCommand implements Command {
     private final PrettyPrinter printer = new PrettyPrinter();
 

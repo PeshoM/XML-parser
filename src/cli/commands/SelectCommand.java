@@ -6,6 +6,7 @@ import model.XmlElement;
 
 import java.io.PrintStream;
 
+/** Командата select. */
 public class SelectCommand implements Command {
     @Override public String name() { return "select"; }
     @Override public String helpLine() { return "select <id> <key>  prints value of attribute"; }

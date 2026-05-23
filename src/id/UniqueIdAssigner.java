@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/** Налага правилата за уникални id върху документ. */
 public class UniqueIdAssigner {
+    /** Присвоява уникални id-та на всички елементи. */
     public void assign(XmlDocument doc) {
         List<XmlElement> all = new ArrayList<>();
         walk(doc.getRoot(), all);

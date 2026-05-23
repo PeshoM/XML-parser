@@ -6,6 +6,7 @@ import serializer.PrettyPrinter;
 
 import java.io.PrintStream;
 
+/** Командата print. */
 public class PrintCommand implements Command {
     private final PrettyPrinter printer = new PrettyPrinter();
 

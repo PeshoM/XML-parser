@@ -4,6 +4,7 @@ import model.XmlDocument;
 
 import java.nio.file.Path;
 
+/** Споделено състояние между командите. */
 public class Session {
     private XmlDocument doc;
     private Path path;
@@ -29,6 +30,7 @@ public class Session {
     public void markModified() { this.modified = true; }
     public void clearModified() { this.modified = false; }
 
+    /** Хвърля, ако няма отворен документ. */
     public void requireOpen() {
         if (!hasOpenDoc()) throw new IllegalStateException("No file is currently open.");
     }

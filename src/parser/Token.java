@@ -1,5 +1,6 @@
 package parser;
 
+/** Токен от XML лексикалния анализ. */
 public class Token {
     public final TokenType type;
     public final String value;

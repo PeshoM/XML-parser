@@ -7,6 +7,7 @@ import model.XmlElement;
 
 import java.io.PrintStream;
 
+/** Командата newchild. */
 public class NewChildCommand implements Command {
     @Override public String name() { return "newchild"; }
     @Override public String helpLine() { return "newchild <id>    adds a new child to element"; }

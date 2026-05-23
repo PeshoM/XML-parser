@@ -12,6 +12,7 @@ import xpath.XPathTokenizer;
 import java.io.PrintStream;
 import java.util.List;
 
+/** Командата xpath. */
 public class XPathCommand implements Command {
     private final PrettyPrinter printer = new PrettyPrinter();
 

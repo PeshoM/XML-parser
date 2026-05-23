@@ -3,7 +3,9 @@ package cli;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Разделя ред на аргументи, зачитайки кавички. */
 public class ArgumentTokenizer {
+    /** Разделя ред на аргументи. */
     public String[] tokenize(String input) {
         List<String> out = new ArrayList<>();
         StringBuilder current = new StringBuilder();

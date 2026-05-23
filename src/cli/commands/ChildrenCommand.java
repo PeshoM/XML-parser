@@ -7,6 +7,7 @@ import model.XmlElement;
 import java.io.PrintStream;
 import java.util.stream.Collectors;
 
+/** Командата children. */
 public class ChildrenCommand implements Command {
     @Override public String name() { return "children"; }
     @Override public String helpLine() { return "children <id>    lists attributes of child elements"; }

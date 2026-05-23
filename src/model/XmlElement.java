@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+/** XML елемент: id, атрибути, наследници, текст, родител. */
 public class XmlElement {
     private String id;
     private final LinkedHashMap<String, String> attributes = new LinkedHashMap<>();
@@ -13,6 +14,7 @@ public class XmlElement {
     private String localName;
     private String nsPrefix;
 
+    /** Създава елемент с дадено локално име. */
     public XmlElement(String localName) {
         this.localName = localName;
     }
@@ -24,6 +26,7 @@ public class XmlElement {
 
     public List<XmlElement> getChildren() { return children; }
 
+    /** Добавя наследник и задава родителя му. */
     public void addChild(XmlElement child) {
         child.parent = this;
         children.add(child);
@@ -40,6 +43,7 @@ public class XmlElement {
     public String getNsPrefix() { return nsPrefix; }
     public void setNsPrefix(String nsPrefix) { this.nsPrefix = nsPrefix; }
 
+    /** Връща prefix:local или само local. */
     public String getQualifiedName() {
         return (nsPrefix == null) ? localName : nsPrefix + ":" + localName;
     }

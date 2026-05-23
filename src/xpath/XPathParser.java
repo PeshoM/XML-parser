@@ -3,12 +3,14 @@ package xpath;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Парсър на XPath изрази → списък от стъпки. */
 public class XPathParser {
     private final List<XPathToken> tokens;
     private int pos;
 
     public XPathParser(List<XPathToken> tokens) { this.tokens = tokens; }
 
+    /** Парсва XPath израза в списък от стъпки. */
     public List<XPathStep> parse() {
         List<XPathStep> steps = new ArrayList<>();
         if (peek().type == XPathTokenType.SLASH) advance();

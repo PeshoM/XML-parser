@@ -3,9 +3,11 @@ package serializer;
 import model.XmlDocument;
 import model.XmlElement;
 
+/** Сериализира XML документ с форматирани отстъпи. */
 public class PrettyPrinter {
     private static final String INDENT = "  ";
 
+    /** Връща форматиран XML низ за документа. */
     public String print(XmlDocument doc) {
         StringBuilder sb = new StringBuilder();
         renderElement(doc.getRoot(), 0, sb);

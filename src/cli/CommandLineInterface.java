@@ -19,6 +19,7 @@ import io.FileService;
 
 import java.util.Scanner;
 
+/** REPL цикъл: чете команди от stdin и ги изпълнява. */
 public class CommandLineInterface {
     private final CommandRegistry registry = new CommandRegistry();
     private final Session session = new Session();
@@ -44,6 +45,7 @@ public class CommandLineInterface {
         registry.register(new ExitCommand(() -> running = false));
     }
 
+    /** Стартира REPL цикъла. */
     public void run() {
         Scanner scanner = new Scanner(System.in);
         while (running && scanner.hasNextLine()) {

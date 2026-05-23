@@ -6,6 +6,7 @@ import model.XmlElement;
 
 import java.io.PrintStream;
 
+/** Командата delete. */
 public class DeleteCommand implements Command {
     @Override public String name() { return "delete"; }
     @Override public String helpLine() { return "delete <id> <key>  removes attribute"; }

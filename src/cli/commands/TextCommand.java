@@ -6,6 +6,7 @@ import model.XmlElement;
 
 import java.io.PrintStream;
 
+/** Командата text. */
 public class TextCommand implements Command {
     @Override public String name() { return "text"; }
     @Override public String helpLine() { return "text <id>        prints text of element"; }

@@ -6,6 +6,7 @@ import model.XmlElement;
 
 import java.io.PrintStream;
 
+/** Командата set. */
 public class SetCommand implements Command {
     @Override public String name() { return "set"; }
     @Override public String helpLine() { return "set <id> <key> <value>  sets attribute"; }

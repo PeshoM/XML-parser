@@ -8,6 +8,7 @@ import serializer.PrettyPrinter;
 import java.io.IOException;
 import java.io.PrintStream;
 
+/** Командата save. */
 public class SaveCommand implements Command {
     private final FileService fs;
     private final PrettyPrinter printer = new PrettyPrinter();

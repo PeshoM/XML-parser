@@ -3,12 +3,14 @@ package xpath;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Токенизатор за XPath изразите. */
 public class XPathTokenizer {
     private final String input;
     private int pos;
 
     public XPathTokenizer(String input) { this.input = input; }
 
+    /** Връща всички токени от XPath израза. */
     public List<XPathToken> tokenize() {
         List<XPathToken> out = new ArrayList<>();
         while (pos < input.length()) {

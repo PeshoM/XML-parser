@@ -1,5 +1,6 @@
 package xpath;
 
+/** Предикат в XPath стъпка. */
 public abstract class XPathPredicate {
     public static class Index extends XPathPredicate {
         public final int index;

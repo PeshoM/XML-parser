@@ -5,7 +5,9 @@ import model.XmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Изпълнява XPath заявка спрямо начален елемент. */
 public class XPathEvaluator {
+    /** Изпълнява заявката от стартовия елемент. */
     public List<Object> evaluate(XmlElement start, List<XPathStep> steps) {
         List<XmlElement> current = new ArrayList<>();
         current.add(start);

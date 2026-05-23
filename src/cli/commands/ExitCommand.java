@@ -5,6 +5,7 @@ import cli.Session;
 
 import java.io.PrintStream;
 
+/** Командата exit. */
 public class ExitCommand implements Command {
     private final Runnable shutdown;
 

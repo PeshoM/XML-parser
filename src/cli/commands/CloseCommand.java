@@ -5,6 +5,7 @@ import cli.Session;
 
 import java.io.PrintStream;
 
+/** Командата close. */
 public class CloseCommand implements Command {
     @Override public String name() { return "close"; }
     @Override public String helpLine() { return "close            closes currently opened file"; }

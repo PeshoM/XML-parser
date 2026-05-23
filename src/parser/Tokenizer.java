@@ -3,6 +3,7 @@ package parser;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Токенизатор за XML: символи → токени. */
 public class Tokenizer {
     private final String input;
     private int pos;
@@ -14,6 +15,7 @@ public class Tokenizer {
         this.input = input;
     }
 
+    /** Връща всички токени от входния низ. */
     public List<Token> tokenize() {
         List<Token> tokens = new ArrayList<>();
         while (pos < input.length()) {
