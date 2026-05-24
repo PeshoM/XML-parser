@@ -50,9 +50,9 @@ public class CommandLineInterface {
         Scanner scanner = new Scanner(System.in);
         while (running && scanner.hasNextLine()) {
             System.out.print("> ");
-            String line = scanner.nextLine().trim();
-            if (line.isEmpty()) continue;
-            String[] tokens = argTokenizer.tokenize(line);
+            String input = scanner.nextLine().trim();
+            if (input.isEmpty()) continue;
+            String[] tokens = argTokenizer.tokenize(input);
             Command c = registry.lookup(tokens);
             if (c == null) { System.out.println("Unknown command. Type 'help' for the list."); continue; }
             int consumed = registry.leadingTokensConsumed(tokens);

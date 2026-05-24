@@ -95,6 +95,10 @@ public class Parser {
         return el;
     }
 
+    private static String qualified(String prefix, String local) {
+        return (prefix == null) ? local : prefix + ":" + local;
+    }
+
     private Token peek() { return tokens.get(pos); }
     private Token advance() { return tokens.get(pos++); }
 
@@ -105,9 +109,5 @@ public class Parser {
                 tok.line, tok.column);
         }
         return advance();
-    }
-
-    private static String qualified(String prefix, String local) {
-        return (prefix == null) ? local : prefix + ":" + local;
     }
 }

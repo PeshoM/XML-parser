@@ -51,9 +51,9 @@ public class XPathTokenizer {
     }
 
     private XPathToken readNumber() {
-        int start = pos;
+        int startPos = pos;
         while (pos < input.length() && Character.isDigit(input.charAt(pos))) pos++;
-        return new XPathToken(XPathTokenType.NUMBER, input.substring(start, pos));
+        return new XPathToken(XPathTokenType.NUMBER, input.substring(startPos, pos));
     }
 
     private XPathToken readIdentifier() {
