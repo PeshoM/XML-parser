@@ -4,3 +4,4 @@ public class Application {
         new cli.CommandLineInterface().run();
     }
 }
+
