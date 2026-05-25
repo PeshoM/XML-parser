@@ -48,6 +48,8 @@ public class CommandLineInterface {
     /** Стартира REPL цикъла. */
     public void run() {
         Scanner scanner = new Scanner(System.in);
+        Command help = registry.lookup(new String[] { "help" });
+        if (help != null) help.execute(new String[0], session, System.out);
         while (running && scanner.hasNextLine()) {
             System.out.print("> ");
             String input = scanner.nextLine().trim();
