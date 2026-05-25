@@ -55,10 +55,8 @@ public class XPathParser {
 
         if (peek().type == XPathTokenType.OPEN_PAREN) {
             advance();
-            expect(XPathTokenType.AT);
-            XPathToken nameTok = expect(XPathTokenType.IDENTIFIER);
+            step.predicates.add(parsePredicate());
             expect(XPathTokenType.CLOSE_PAREN);
-            step.predicates.add(new XPathPredicate.AttrSelector(nameTok.value));
             return step;
         }
 
