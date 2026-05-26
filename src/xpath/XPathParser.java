@@ -40,6 +40,7 @@ public class XPathParser {
             advance();
             XPathToken nameTok = expect(XPathTokenType.IDENTIFIER);
             step.name = "*";
+            step.axis = Axis.SELF;
             step.predicates.add(new XPathPredicate.AttrSelector(nameTok.value));
             return step;
         }
