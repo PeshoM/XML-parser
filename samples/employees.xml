@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<company name="Acme Corp">
+    <department id="eng" name="Engineering">
+        <employee id="e1" role="manager">
+            <name>Alice Johnson</name>
+            <email>alice@acme.example</email>
+            <salary currency="USD">120000</salary>
+        </employee>
+        <employee id="e2" role="senior">
+            <name>Bob Smith</name>
+            <email>bob@acme.example</email>
+            <salary currency="USD">95000</salary>
+        </employee>
+        <employee id="e3" role="junior">
+            <name>Carol Davis</name>
+            <email>carol@acme.example</email>
+            <salary currency="USD">65000</salary>
+        </employee>
+    </department>
+    <department id="sales" name="Sales">
+        <employee id="e4" role="manager">
+            <name>David Lee</name>
+            <email>david@acme.example</email>
+            <salary currency="USD">110000</salary>
+        </employee>
+        <employee id="e5" role="senior">
+            <name>Eve Martinez</name>
+            <email>eve@acme.example</email>
+            <salary currency="USD">85000</salary>
+        </employee>
+    </department>
+</company>

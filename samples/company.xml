@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Nested company structure for exercising children/child indexing and XPath. -->
+<company id="c1" name="Globex">
+    <department id="eng" head="Alice">
+        <team id="backend" size="4">
+            <employee id="e1" role="lead">
+                <name>Alice Petrova</name>
+                <email>alice@globex.example</email>
+            </employee>
+            <employee id="e2" role="dev">
+                <name>Bob Ivanov</name>
+                <email>bob@globex.example</email>
+            </employee>
+            <employee role="dev">
+                <name>Carol Stoyanova</name>
+                <email>carol@globex.example</email>
+            </employee>
+        </team>
+        <team id="frontend" size="2">
+            <employee id="e3" role="lead">
+                <name>Dimitar Georgiev</name>
+                <email>dimitar@globex.example</email>
+            </employee>
+            <employee id="e4" role="dev">
+                <name>Elena Koleva</name>
+                <email>elena@globex.example</email>
+            </employee>
+        </team>
+    </department>
+    <department id="sales" head="Frank">
+        <team id="emea" size="1">
+            <employee id="e5" role="manager">
+                <name>Frank Marinov</name>
+                <email>frank@globex.example</email>
+            </employee>
+        </team>
+    </department>
+</company>
