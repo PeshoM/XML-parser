@@ -12,7 +12,7 @@ public class ArgumentTokenizer {
         boolean inQuotes = false;
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
-            if (c == '"') {
+            if (c == '"' && (inQuotes || current.length() == 0)) {
                 inQuotes = !inQuotes;
             } else if (Character.isWhitespace(c) && !inQuotes) {
                 if (current.length() > 0) {
